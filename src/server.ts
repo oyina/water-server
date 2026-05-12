@@ -20,7 +20,10 @@ const PORT = process.env.PORT || 3000
 
 //cors
 app.use(myLogger);
-app.use(cors());
+app.use(cors({
+    origin: "https://water-ui-o9rb.onrender.com",
+    credentials: true
+}));
 app.use(express.json());
 app.use("/predict", predictRoutes);
 
